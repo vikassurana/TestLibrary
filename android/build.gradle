@@ -20,12 +20,12 @@ buildscript {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 22
+        minSdkVersion 18
+        targetSdkVersion 28
         versionCode 1
         // get version name from package.json version
         versionName computeVersionName()
@@ -40,5 +40,10 @@ repositories {
 }
 
 dependencies {
-    compile 'com.facebook.react:react-native:+'
+    implementation 'com.facebook.react:react-native:+'
+    implementation project(':common')//Common UI assets and classes
+    implementation project(':domain')//Simple Java Classes (Data transfer objects, entities, etc.)
+
+    implementation project(':services')//Base service routines
+    implementation project(':servicesauth')//Authentication service
 }
