@@ -1,7 +1,12 @@
 package com.ccc.androidlibrary;
 
+import android.util.Log;
 import android.widget.Toast;
 
+import com.cccis.sdk.android.auth.CCCAPIAuthClientService;
+import com.cccis.sdk.android.rest.RESTErrorResponse;
+import com.cccis.sdk.android.services.callback.OnCCCAPIActionCallback;
+import com.cccis.sdk.android.services.rest.context.ENVFactory;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -34,5 +39,33 @@ public class Module extends ReactContextBaseJavaModule {
   @ReactMethod
   public void show(String message, int duration) {
     Toast.makeText(getReactApplicationContext(), message, duration).show();
+  }
+
+  @ReactMethod
+  public void authenticateUser(String claimId, String lastName) {
+    Log.i("claimId in library",claimId);
+    Log.i("last name in library",lastName);
+    CCCAPIAuthClientService service = new CCCAPIAuthClientService(ENVFactory.getInstance(getReactApplicationContext()).SHARED_ENV);
+    service.onLogon(claimId, lastName, new OnCCCAPIActionCallback() {
+      @Override
+      public void onSuccess() {
+        Log.i("onSuccess of library", "Login success!");
+
+        //Toast.makeText(getReactApplicationContext(), "Login success!", Toast.LENGTH_SHORT).show();
+      }
+
+      @Override
+      public void onFailure(RESTErrorResponse result, int statusCode, Throwable t) {
+        if (t != null) {
+          Log.i("onFailure if in library", "Login failed!");
+          Log.i("onFailure if in library", t.getClass().getSimpleName() + ": " + t.getMessage());
+          //Toast.makeText(getReactApplicationContext(), t.getClass().getSimpleName() + ": " + t.getMessage(), Toast.LENGTH_SHORT).show();
+        } else {
+          Log.i("onFailure else library", "Login failed!");
+          Log.i("onFailure else library", "StatusCode: " + statusCode + " - Payload=" + result);
+          // Toast.makeText(getReactApplicationContext(), "StatusCode: " + statusCode + " - Payload=" + result, Toast.LENGTH_SHORT).show();
+        }
+      }
+    });
   }
 }
