@@ -62,7 +62,7 @@ There are many ways to do this, here's the way I do it:
             }
         }
         ```
-4. Simply `import/require` it by the name defined in your library's `package.json`:
+4. Simply `import/require` it in your App.js by the name defined in your library's `package.json`:
 
     ```javascript
     import Boilerplate from 'react-native-android-library'
