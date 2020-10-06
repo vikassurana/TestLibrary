@@ -1,5 +1,7 @@
 package com.ccc.androidlibrary;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -67,5 +69,14 @@ public class Module extends ReactContextBaseJavaModule {
         }
       }
     });
+  }
+
+  @ReactMethod
+  public void capture() {
+    //ReactApplicationContext context = getReactApplicationContext();
+    Activity activity = getCurrentActivity();
+
+    Intent intent = new Intent(activity, SDKShowcaseActivity.class);
+    activity.startActivity(intent);
   }
 }
