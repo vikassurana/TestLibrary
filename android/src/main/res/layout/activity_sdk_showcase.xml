@@ -37,14 +37,23 @@
                 android:layout_margin="@dimen/activity_vertical_margin"
                 android:paddingTop="0dp" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="VIN Scan Demo"
-                android:onClick="vinScan"
-                style="@style/submit_button"
-                android:layout_margin="@dimen/activity_vertical_margin"
-                android:paddingTop="0dp" />
+<!--            <Button-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="VIN Scan Demo"-->
+<!--                android:onClick="vinScan"-->
+<!--                style="@style/submit_button"-->
+<!--                android:layout_margin="@dimen/activity_vertical_margin"-->
+<!--                android:paddingTop="0dp" />-->
+
+<!--            <Button-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="VIN Decode Demo"-->
+<!--                android:onClick="vinDecode"-->
+<!--                style="@style/submit_button"-->
+<!--                android:layout_margin="@dimen/activity_vertical_margin"-->
+<!--                android:paddingTop="0dp" />-->
 
             <Button
                 android:layout_width="match_parent"

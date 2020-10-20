@@ -76,7 +76,9 @@ public class Module extends ReactContextBaseJavaModule {
     //ReactApplicationContext context = getReactApplicationContext();
     Activity activity = getCurrentActivity();
 
-    Intent intent = new Intent(activity, SDKShowcaseActivity.class);
+//    Intent intent = new Intent(activity, SDKShowcaseActivity.class);
+//    activity.startActivity(intent);
+    Intent intent = new Intent(activity, SDKShowcaseVinScanActivity.class);
     activity.startActivity(intent);
   }
 }
