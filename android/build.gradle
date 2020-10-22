@@ -44,16 +44,6 @@ repositories {
 dependencies {
     implementation 'com.facebook.react:react-native:+'
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation project(':common')//Common UI assets and classes
-    implementation project(':domain')//Simple Java Classes (Data transfer objects, entities, etc.)
-    implementation project(':services')//Base service routines
-    implementation project(':servicesauth')//Authentication service
-    implementation project(':servicesupload')//Photo Upload Service
-    implementation project(':uiphotocapture_qe')//Photo Capture for the Quick Estimate Flow
-    implementation project(':uiphotocapture_qe_ls')//Local Storage extension for Photo Capture
-    implementation project(':servicesestimate')//Services for retrieving Total Cost of Repair (TCOR) and Estimate PDF
-    implementation project(':uivindecoding')
-    implementation libraries.constraintLayout
     //implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     //implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 //Omit if not using VIN Scan feature - also omit zxing
