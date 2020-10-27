@@ -20,5 +20,8 @@
   },
   "peerDependencies": {
     "react-native": ">=0.38.0"
+  },
+  "dependencies": {
+    "react-native-nfc-manager": "^1.2.2"
   }
 }
